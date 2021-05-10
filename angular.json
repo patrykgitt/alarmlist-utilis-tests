@@ -40,7 +40,7 @@
           "options": {
             "outputPath": "dist/todo",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "main": "src/main-testing.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
