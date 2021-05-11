@@ -9,8 +9,33 @@
 import { PlcCommMgnt } from './commMgnt';
 describe('Testing tests', () => {
   var commMgnt = new PlcCommMgnt();
-
-  it('should succeed', () => expect(commMgnt.getPlcRegs()).toEqual(18));
+  var testRegs = [
+  {
+    device: "R0",
+    type: "int"
+  },
+  {
+    device: "R1",
+    type: "int"
+  },
+  {
+    device: "R2",
+    type: "int"
+  },
+  {
+    device: "R3",
+    type: "int"
+  },
+  {
+    device: "R4",
+    type: "int"
+  },
+  {
+    device: "R5",
+    type: "int"
+  }];
+  commMgnt.stringsRegs(0,6,1);
+  it('should return array of regs', () => expect(commMgnt.getPlcRegs()).toEqual(testRegs));
 
   //it('should succeed', () => expect(true).toEqual(true));
   //it('should fail', () => expect(true).toEqual(false));
