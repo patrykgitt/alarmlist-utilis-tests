@@ -1,16 +1,22 @@
 export class PlcCommMgnt {
+  plcRegs = [];
+  maxRegPerReq = 32;
+  startReg = 0;
+  noOfRegsPerString = 16;
+  noOfStrings = 16;
   constructor() {
-    const maxRegPerReq = 32;
-    const startReg = o;
-    const noOfRegsPerString = 16;
-    const noOfStrings = 16;
-    var plcRegs;
-    stringsRegs(startReg, noOfRegsPerString, noOfStrings);
+    this.stringsRegs(this.startReg, this.noOfRegsPerString, this.noOfStrings);
   }
   stringsRegs(startReg, noOfRegsPerSting, noOfStrings) {
-    noOfRegs = noOfRegsPerSting * noOfStrings;
+    let noOfRegs = noOfRegsPerSting * noOfStrings;
     for (let i = 0; i < noOfRegs; i++) {
-      this.plcRegs.append({ device: 'test', type: 'int' });
+      let temp='R'+i.toString();
+      this.plcRegs.push({ device: temp, type: 'int' });
+      
     }
+    console.log(this.plcRegs);
+  }
+  getPlcRegs() {
+    return this.plcRegs;
   }
 }
